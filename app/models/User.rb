@@ -18,8 +18,8 @@ class User
     (self.recipe_cards.map {|rc| rc.recipe}).uniq
   end
 
-  def add_recipe_card(recipe)
-    RecipeCard.new(user: self, recipe: recipe)
+  def add_recipe_card(recipe:, date:, rating:)
+    RecipeCard.new(date: date, rating: rating, user: self, recipe: recipe)
   end
 
   def declare_allergen(ingredient)
@@ -39,12 +39,12 @@ class User
   end
 
   def safe_recipes
-    good_ingredient_lists = (Recipe.all.map {|r| r.ingredients}).select {|i_l| !(self.allergens & ingredient_list)}
-    good_ingredient_lists.map do |i_l|
-      Recipe.all.first do |recipe|
-        recipe.ingredients = i_l
+    good_ingredient_lists = (Recipe.all.map {|r| r.ingredients}).select {|i_l| (self.allergens & i_l) == []}
+    good_recipes = good_ingredient_lists.map do |i_l|
+      Recipe.all.find_all do |recipe|
+        recipe.ingredients == i_l
       end
-    end
-  end # This should work so long as no two recipes have the exact same ingredients
+    end.uniq
+  end
 
 end
