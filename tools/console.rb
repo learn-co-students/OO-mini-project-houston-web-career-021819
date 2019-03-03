@@ -40,7 +40,7 @@ mark.declare_allergen(shrimp)
 mark.declare_allergen(cheese)
 
 pizza_dough_2 = Recipe.new(title: 'Pizza Dough 2')
-pizza_dough_2.add_ingredients([flour,yeast,wine]) #testing for .safe_allergens
+pizza_dough_2.add_ingredients([flour,yeast,wine]) #testing for .safe_recipes
 
 
 

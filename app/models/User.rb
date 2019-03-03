@@ -40,11 +40,10 @@ class User
 
   def safe_recipes
     good_ingredient_lists = (Recipe.all.map {|r| r.ingredients}).select {|i_l| (self.allergens & i_l) == []}
-    good_recipes = good_ingredient_lists.map do |i_l|
+    good_ingredient_lists.map do |i_l|
       Recipe.all.find_all do |recipe|
         recipe.ingredients == i_l
       end
     end.uniq
   end
-
 end
