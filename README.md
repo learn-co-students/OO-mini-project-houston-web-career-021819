@@ -11,84 +11,84 @@ We've provided you with a console that you can use to test your code. To enter a
 ### `Recipe`
 Build the following methods on the Recipe class
 
-- `Recipe.all`
+- `Recipe.all` ~~
 should return all of the recipe instances
 - `Recipe.most_popular`
 should return the recipe instance with the highest number of users (the recipe that has the most recipe cards)
-- `Recipe#users`
+- `Recipe#users` ~~
 should return the user instances who have recipe cards with this recipe
-- `Recipe#ingredients`
+- `Recipe#ingredients` ~~
 should return all of the ingredients in this recipe
-- `Recipe#allergens`
+- `Recipe#allergens` ~~
 should return all of the ingredients in this recipe that are allergens
-- `Recipe#add_ingredients`
+- `Recipe#add_ingredients` ~~
 should take an array of ingredient instances as an argument, and associate each of those ingredients with this recipe
 
 
-### `User`
+### `User` ~~
 Build the following methods on the User class
 
-- `User.all`
+- `User.all` ~~
 should return all of the user instances
-- `User#recipes`
+- `User#recipes` ~~
 should return all of the recipes this user has recipe cards for
-- `User#add_recipe_card`
+- `User#add_recipe_card` ~~
 should accept a recipe instance as an argument, as well as a date and rating, and create a new recipe card for this user and the given recipe
-- `User#declare_allergen`
+- `User#declare_allergen` ~~
 should accept an ingredient instance as an argument, and create a new allergen instance for this user and the given ingredient
-- `User#allergens`
+- `User#allergens` ~~
 should return all of the ingredients this user is allergic to
-- `User#top_three_recipes`
+- `User#top_three_recipes` ~~
 should return the top three highest rated recipes for this user.
-- `User#most_recent_recipe`
+- `User#most_recent_recipe` ~~
 should return the recipe most recently added to the user's cookbook.
 
 
 
-### `RecipeCard`
+### `RecipeCard` ~~
 A RecipeCard is the join between a user instance and a recipe instance.  This is a has-many-through relationship.
 Build the following methods on the RecipeCard class:  
 
-- `RecipeCard.all`
+- `RecipeCard.all` ~~
 should return all of the RecipeCard instances
-- `RecipeCard#date`
+- `RecipeCard#date` ~~
 should return the date of the entry
-- `RecipeCard#rating`
+- `RecipeCard#rating` ~~
 should return the rating (an integer) a user has given their entry
-- `RecipeCard#user`
+- `RecipeCard#user` ~~
 should return the user to which the entry belongs
-- `RecipeCard#recipe`
+- `RecipeCard#recipe` ~~
 should return the recipe to which the entry belongs
 
-### `Ingredient`
+### `Ingredient` ~~
 Build the following methods on the Ingredient class
 
-- `Ingredient.all`
+- `Ingredient.all` ~~
 should return all of the ingredient instances
-- `Ingredient.most_common_allergen`
+- `Ingredient.most_common_allergen` ~~
 should return the ingredient instance that the highest number of users are allergic to
 
 
-### `RecipeIngredient`
+### `RecipeIngredient` ~~
 RecipeIngredient is the join between an ingredient and a recipe.  This is a has-many-through relationship
 Build the following methods on the RecipeIngredient class
 
-- `RecipeIngredient.all`
+- `RecipeIngredient.all` ~~
 should return all of the RecipeIngredient instances
-- `RecipeIngredient#ingredient`
+- `RecipeIngredient#ingredient` ~~
 should return the ingredient instance
-- `RecipeIngredient#recipe`
+- `RecipeIngredient#recipe` ~~
 should return the recipe instance
 
-### `Allergen`
+### `Allergen` ~~
 An Allergen is a join between a user and an ingredient.  This is a has-many-through relationship.  What methods should an instance of this model respond to?
 
-- `Allergen.all`
+- `Allergen.all` ~~
 should return all of the Allergen instances
 
 
 
 ### `**Bonus**`
-- `User#safe_recipes`
+- `User#safe_recipes` ~~
 should return all recipes that do not contain ingredients the user is allergic to
 - What other methods might be useful to have?
